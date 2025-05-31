@@ -1,0 +1,216 @@
+    /* Additional styles for user authentication dropdown */
+    .user-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .user-dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 4px;
+    }
+    
+    .user-dropdown:hover .user-dropdown-content {
+        display: block;
+    }
+    
+    .user-dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .user-dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    
+    .user-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .user-icon img {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+    
+    /* Order History Specific Styles */
+    .orders-container {
+        margin-top: 100px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+    
+    .page-title {
+        font-size: 28px;
+        margin-top: 60px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+        border-bottom: 1px solid rgb(149, 86, 191);
+        padding-bottom: 10px;
+    }
+    
+    .order-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+    
+    .order-header {
+        background-color:rgb(53, 5, 86);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .order-id {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .order-date, .order-status, .order-total {
+        margin-top: 5px;
+    }
+    
+    .order-status {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .status-completed {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    
+    .status-processing {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+    
+    .status-shipped {
+        background-color: #cce5ff;
+        color: #004085;
+    }
+    
+    .status-cancelled {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+    
+    .order-details {
+        padding: 20px;
+    }
+    
+    .order-items {
+        margin-top: 20px;
+    }
+    
+    .order-item {
+        display: flex;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .order-item:last-child {
+        border-bottom: none;
+    }
+    
+    .item-image img {
+        width: 80px;
+        height: auto;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+    
+    .item-details {
+        flex-grow: 1;
+        padding: 0 20px;
+    }
+    
+    .item-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    
+    .item-author {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 5px;
+    }
+    
+    .item-price {
+        font-weight: bold;
+    }
+    
+    .no-orders {
+        text-align: center;
+        padding: 40px 0;
+        color: #666;
+    }
+    
+    .order-meta {
+        background-color: #f9f9f9;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+    }
+    
+    .payment-method, .shipping-address {
+        flex: 1;
+    }
+    
+    .shipping-address {
+        text-align: right;
+    }
+    
+    @media (max-width: 768px) {
+        .order-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .order-id, .order-date, .order-status, .order-total {
+            margin-bottom: 5px;
+        }
+        
+        .order-item {
+            flex-direction: column;
+        }
+        
+        .item-image {
+            margin-bottom: 10px;
+        }
+        
+        .item-details {
+            padding: 0;
+        }
+        
+        .order-meta {
+            flex-direction: column;
+        }
+        
+        .shipping-address {
+            text-align: left;
+            margin-top: 10px;
+        }
+    }

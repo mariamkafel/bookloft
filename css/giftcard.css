@@ -1,0 +1,181 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #30214d;
+    line-height: 1.6;
+}
+
+.div1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    padding: 20px;
+    text-align: center;
+}
+
+.div1 h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.div1 p {
+    max-width: 900px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.div2 {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.div2 .left-column {
+    flex: 1;
+    max-width: 50%;
+}
+
+.div2 .left-column img {
+    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.div2 .left-column ul {
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.div2 .left-column li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.div2 .right-column {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.email {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
+}
+
+.email:focus {
+    border-color: #30214d;
+    outline: none;
+}
+
+.label {
+    font-size: 18px;
+    color: #30214d;
+    margin-bottom: 5px;
+}
+
+.price-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.price-options label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #30214d;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    font-size: 16px;
+    color: #30214d;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.price-options label:hover {
+    background-color: rgba(48, 33, 77, 0.1);
+}
+
+.price-options input[type="radio"]:checked + label {
+    background-color: #30214d;
+    color: white;
+}
+
+
+.text {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s;
+}
+
+.text:focus {
+    border-color: #30214d;
+    outline: none;
+}
+
+.button1 {
+    background-color: #30214d;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 12px 24px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.button1:hover {
+    background-color: #1a1029;
+}
+
+@media (max-width: 768px) {
+    .div2 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .div2 .left-column,
+    .div2 .right-column {
+        max-width: 100%;
+    }
+}

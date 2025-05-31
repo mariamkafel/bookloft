@@ -1,0 +1,250 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+}
+.image-content {
+    display: flex; /* Makes the layout horizontal */
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-color: #30214d; /* Background color */
+}
+
+/* Content section (text) */
+/* Content section (text) */
+/* Content section (text) */
+.content {
+    width: 50%; /* Taking half of the width */
+    padding-right: 20px;
+    color: white;
+    text-align: left; /* Text aligned to the left inside the content box */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute; /* Positioning it relative to the parent container */
+    right: 0; /* Aligns the content to the right side of the screen */
+    top: 50%; /* Vertically center the content */
+    transform: translateY(-50%); /* Adjust to perfectly center vertically */
+}
+
+/* Title styling */
+.content h1 {
+    font-size: 3rem; /* Larger font for title */
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+
+/* Image section */
+.img {
+    position: absolute;
+    width: 50vw; /* 50% width for images */
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: swapImages 8s infinite ease-in-out;
+}
+
+/* Second image with delayed animation */
+.img.second {
+    animation-delay: 4s;
+}
+
+/* Image fade effect keyframes */
+@keyframes swapImages {
+    0% { opacity: 1; }
+    40% { opacity: 1; }
+    50% { opacity: 0.5; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 1024px) {
+    .image-content {
+        flex-direction: column; /* Stacks content and images vertically */
+    }
+    
+    .content {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .img {
+        width: 100%; /* Full width for images on smaller screens */
+        height: auto; /* Adjust height accordingly */
+    }
+}
+
+/*addingbook_info */
+
+/* Container for the book section */
+
+.border-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 16px;
+    background-color: transparent;
+    border: 5px dashed #30214d;
+    background-clip: content-box;
+    margin-bottom: 90px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #30214d 0%, transparent 50%);
+    animation: dashMove 2s linear infinite;
+    height: 100px;
+}
+.highlight-text {
+    text-align: center; /* Centers the text */
+    font-size: 3vw; /* Makes the font size relative to the viewport width (adjustable for responsiveness) */
+    font-weight: bold; /* Ensures the text is bold */
+    font-style: italic; /* Makes the text italic */
+    background-color: #a28ecc; /* Highlights the text with a background color */
+    padding: 10px; /* Adds space around the text */
+    display: inline-block; /* Ensures the text stays inline for centering */
+}
+
+/* Optional: Responsive adjustments for smaller screens */
+@media (max-width: 760px) {
+    .highlight-text {
+        font-size: 5vw; /* Increases the font size slightly for smaller screens */
+    }
+}
+
+@media (max-width: 470px) {
+    .highlight-text {
+        font-size: 7vw; /* Makes the text larger on very small screens */
+    }
+}
+
+
+.book button{
+    background-color:transparent;
+    border-color:transparent;
+}
+
+
+/* Add these styles to fix the image-content section in first.php */
+@media (max-width: 768px) {
+    .image-content {
+      flex-direction: column;
+      height: auto;
+      min-height: 100vh;
+      position: relative;
+      padding-top: 80px; /* Add padding for the navbar */
+    }
+  
+    .content {
+      width: 100%;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      padding: 20px;
+      order: 1; /* Make content appear first */
+      text-align: center;
+      z-index: 2;
+    }
+  
+    .img {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      order: 2; /* Make images appear after content */
+      margin-top: 20px;
+    }
+  
+    .img.second {
+      display: none; /* Hide second image on mobile */
+    }
+  
+    .content h1 {
+      font-size: 2rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .image-content {
+      padding-top: 60px;
+    }
+  
+    .content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .img {
+      height: 250px;
+    }
+  }
+  /* Add these styles to fix the image-content section in first.php */
+@media (max-width: 768px) {
+    .image-content {
+      flex-direction: column;
+      height: auto;
+      min-height: 100vh;
+      position: relative;
+      padding-top: 80px; /* Add padding for the navbar */
+    }
+  
+    .content {
+      width: 100%;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      padding: 20px;
+      order: 1; /* Make content appear first */
+      text-align: center;
+      z-index: 2;
+    }
+  
+    .img {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      order: 2; /* Make images appear after content */
+      margin-top: 20px;
+    }
+  
+    .img.second {
+      display: none; /* Hide second image on mobile */
+    }
+  
+    .content h1 {
+      font-size: 2rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .image-content {
+      padding-top: 60px;
+    }
+  
+    .content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .img {
+      height: 250px;
+    }
+  }
+  

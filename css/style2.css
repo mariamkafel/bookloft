@@ -1,0 +1,488 @@
+#video-display {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+.first-block {
+  margin-top: 90px; /* Adjust based on your navbar height */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  #video-display {
+    width: 100vw; /* Maintain full width on tablets */
+    height: 100vh; /* Maintain full height on tablets */
+  }
+  
+  /* Adjust the video positioning for better mobile viewing */
+  .first-block {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  #video-display {
+    height: 70vh; /* Reduce height on mobile */
+  
+  }
+  
+  .first-block {
+    height: 70vh;
+  }
+}
+
+/* For landscape orientation on small devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  #video-display {
+    width: 100vw; /* Maintain full width on landscape */
+    height: 50vh; /* Slightly larger to ensure coverage */
+  }
+  
+  .first-block {
+    height: 100vh;
+  }
+}
+.second-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto 20px;
+  background-color: #f8f5ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 8px 8px 0 0;
+  background-color: white;
+  padding: 5px;
+}
+
+.book-info {
+  margin-top: 10px;
+  color: #362657;
+  width: 100%;
+  background-color: #f8f5ff;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+}
+
+.book-info p {
+  margin: 5px 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+
+.book-info strong {
+  color: #30214d;
+  font-weight: bold;
+}
+
+.write {
+  margin-top: 100vh;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(109, 82, 144, 0.2);
+}
+
+.write h2 {
+  color: #30214d;
+  font-size: clamp(16px, 5vw, 24px);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sale-logo {
+  width: 65%;
+  max-width: 250px;
+  height: auto;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transform-origin: center;
+  filter: drop-shadow(0 0 0 rgba(109, 82, 144, 0));
+  transition: filter 0.5s;
+}
+
+.sale-logo.glow {
+  filter: drop-shadow(0 0 15px rgba(109, 82, 144, 0.8));
+}
+
+.book-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 10px 0;
+  width: auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.book-icons img {
+  width: 30px;
+  height: 30px;
+  background: #f8f5ff;
+  padding: 5px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.book-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Animation for text elements */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #a28ecc;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #30214d;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Book actions */
+.book-actions {
+  margin-top: 15px;
+  width: 100%;
+  padding: 0 15px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.details-btn {
+  background-color: #30214d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 140px;
+  transition: background-color 0.3s;
+  display: block;
+}
+
+.details-btn:hover {
+  background-color: #5a4277;
+}
+
+/* Favorite icon */
+.favorite-icon {
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  color: #ccc;
+  display: inline-flex;
+  user-select: none;
+  background: #f8f5ff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.favorite-icon.in-wishlist {
+  color: #e63946;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2);
+}
+
+
+/* Popup notification */
+.popup {
+  position: fixed;
+  bottom: 20px;
+  height: 20px;
+  right: 20px;
+  background-color: #30214d;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 4px;
+  z-index: 1100;
+  height: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: slideIn 0.3s forwards;
+}
+
+.popup.success {
+  background-color: #30214d;
+}
+
+.popup.error {
+  background-color: #e63946;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .second-block {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  .second-block {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 15px;
+  }
+  
+  .write {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .second-block {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+  }
+  
+  .item img {
+    height: 220px;
+  }
+  
+  .book-info {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .write {
+    width: 85%;
+    padding: 15px;
+  }
+  
+  .sale-logo {
+    width: 60%;
+    max-width: 200px;
+  }
+  
+
+}
+
+@media (max-width: 576px) {
+  .second-block {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .item {
+    margin-bottom: 15px;
+  }
+  
+  .item img {
+    height: 180px;
+  }
+  
+  .book-info {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .book-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .favorite-icon {
+    width: 25px;
+    height: 10px;
+    font-size: 20px;
+  }
+  .cart-icon {
+    width: 25px;
+    height: 10px;
+    font-size: 20px;
+  }
+  .details-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .write {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .sale-logo {
+    width: 55%;
+    max-width: 180px;
+  }
+  
+  .popup {
+    padding: 10px 20px;
+    font-size: 14px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .second-block {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .item img {
+    height: 200px;
+  }
+  
+  .book-icons {
+    top: 8px;
+    right: 8px;
+  }
+  
+  .write {
+    width: 95%;
+    padding: 12px;
+  }
+  
+  .sale-logo {
+    width: 50%;
+    max-width: 160px;
+  }
+  
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Orientation specific styles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .write {
+    margin-top: 110vh;
+  }
+  
+  .item img {
+    height: 150px;
+  }
+}
+
+/* Accessibility improvements */
+.favorite-icon, .book-icons img, .details-btn {
+  cursor: pointer;
+}
+
+/* Ensure all interactive elements are easily tappable on mobile */
+@media (max-width: 768px) {
+  .book-icons {
+    gap: 8px;
+  }
+  
+  .book-icons img, .favorite-icon {
+    min-width: 35px;
+    min-height: 35px;
+  }
+  
+  .details-btn {
+    padding: 8px 11px;
+    min-height: 20px;
+  }
+}
+
+/* Fix for very small devices */
+@media (max-width: 320px) {
+  .second-block {
+    padding: 8px;
+  }
+  
+  .book-info p {
+    margin: 3px 0;
+    font-size: 12px;
+  }
+  
+  .details-btn {
+    height:15px;
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+}
